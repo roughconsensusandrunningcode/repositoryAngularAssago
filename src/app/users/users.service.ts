@@ -10,11 +10,15 @@ export class UsersService {
 
   getUsers(): User[] {
     return [
-      {name: 'Mario', surname: 'Rossi', position: 'developer'},
-      {name: 'Luigi', surname: 'Bianchi', position: 'developer'},
-      {name: 'Antonio', surname: 'Verdi', position: 'senior developer'},
-      {name: 'Giacomo', surname: 'Leopardi', position: 'poeta'},
+      {id: 1, name: 'Mario', surname: 'Rossi', position: 'developer'},
+      {id: 2, name: 'Luigi', surname: 'Bianchi', position: 'developer'},
+      {id: 3, name: 'Antonio', surname: 'Verdi', position: 'senior developer'},
+      {id: 4, name: 'Giacomo', surname: 'Leopardi', position: 'poeta'},
     ];
+  }
+
+  getUser(id: number): User {
+    return this.getUsers().find(u => u.id === id);
   }
 
 }

@@ -13,6 +13,9 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 import { FormsModule } from '@angular/forms';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { WelcomeComponent } from './shared/welcome/welcome.component';
+import { LoginComponent } from './shared/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     ProductsListComponent,
     ProductDetailsComponent,
     UsersListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserDetailsComponent,
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
