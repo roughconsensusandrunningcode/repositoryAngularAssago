@@ -8,6 +8,8 @@ export class ProductsService {
 
   constructor() { }
 
+  private numeroProdotti = 4500;
+
   public getProducts(): Product[] {
     return [
       { id: 1, name: 'frigorifero', category: 'Eletrodomestici',
@@ -17,6 +19,10 @@ export class ProductsService {
       { id: 3, name: 'lAvastoviglie', category: 'Eletrodomestici', price: 300,
         availabile: false, date: new Date(1856, 1, 1), photo: 'https://picsum.photos/100/100'}
     ];
+ }
+
+ public getNumeroProdotti() {
+   return this.numeroProdotti;
  }
 
 }
