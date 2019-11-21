@@ -11,6 +11,8 @@ import { EsempioComponent } from './shared/esempio/esempio.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
+import { UsersListComponent } from './users/users-list/users-list.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     MyMainComponent,
     EsempioComponent,
     ProductsListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    UsersListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
