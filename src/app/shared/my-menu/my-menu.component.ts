@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menu-item';
+import { ContextService } from 'src/app/services/context.service';
 
 @Component({
   selector: 'app-my-menu',
@@ -9,20 +10,12 @@ import { MenuItem } from './menu-item';
 export class MyMenuComponent {
 
   menu: MenuItem[] = [];
+  visualizzazioni = 0;
 
-  constructor() {
-    this.menu = this.getMenu();
+  constructor(private service: ContextService) {
+    this.service.setVisualizzazioni(58);
+    this.visualizzazioni = this.service.getVisualizzazioni();
+    this.menu = service.getMenu();
   }
-
-  getMenu(): MenuItem[] {
-    return [
-      {text: 'Home', link: '#'},
-      {text: 'Products', link: '#'},
-      {text: 'Users', link: '#'},
-      {text: 'About', link: '#'},
-      {text: 'Contacts', link: '#'},
-    ];
-  }
-
 
 }

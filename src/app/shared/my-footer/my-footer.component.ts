@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/products/product';
+import { ContextService } from 'src/app/services/context.service';
 
 @Component({
   selector: 'app-my-footer',
@@ -10,7 +11,8 @@ export class MyFooterComponent implements OnInit {
 
 
   productFooter: Product;
-  constructor() {
+  visualizzazioni: number;
+  constructor(private service: ContextService) {
 
     this.productFooter = {
       id: 1,
@@ -22,6 +24,7 @@ export class MyFooterComponent implements OnInit {
       availabile: true
     };
 
+    this.visualizzazioni = this.service.getVisualizzazioni();
   }
 
   ngOnInit() {
