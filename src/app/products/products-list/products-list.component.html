@@ -15,16 +15,26 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>Date</th>
       <th>Photo</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let product of products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
+      <td>{{product.name | uppercase}}</td>
+      <td>{{product.date | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+      <td>{{product.price | currency}}</td>
       <td><img src="{{product.photo}}"></td>
+      <td> <button class="btn btn-info"  (click)="showDetails(product)" >Details</button> </td>
     </tr>
   </tbody>
 </table>
+
+<div *ngIf="selectedProduct">
+  <app-product-details [product]="selectedProduct"></app-product-details>
+  Hai selezionato {{selectedProduct.name}}
+</div>
+
 
 

@@ -1,0 +1,23 @@
+
+<h3>Edit product's details</h3>
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" id="name" name="name" [(ngModel)]="product.name"  >
+  </div>
+
+  <div class="form-group">
+      <label for="category">Category</label>
+      <input class="form-control" id="category" name="category" [(ngModel)]="product.name" >
+  </div>
+
+  <div class="form-group">
+      <label for="price">Price</label>
+      <input class="form-control" id="price" name="price" type="number" min="0" max ="1000" [(ngModel)]="product.price">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-danger">OK</button>
+  </div>
+
+</form>

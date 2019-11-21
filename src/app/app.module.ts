@@ -9,6 +9,8 @@ import { MyMenuComponent } from './shared/my-menu/my-menu.component';
 import { MyMainComponent } from './shared/my-main/my-main.component';
 import { EsempioComponent } from './shared/esempio/esempio.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { ProductsListComponent } from './products/products-list/products-list.co
     MyFooterComponent,
     MyMainComponent,
     EsempioComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
