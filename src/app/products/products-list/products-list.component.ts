@@ -9,9 +9,10 @@ import { Product } from '../product';
 export class ProductsListComponent  {
 
   products: Product[] = [];
-  selectedProduct: Product;
+  selectedProduct: Product = null;
   constructor() {
     this.products = this.getProducts();
+    console.log(this.selectedProduct);
    }
 
 
@@ -28,6 +29,11 @@ export class ProductsListComponent  {
 
   showDetails(product: Product) {
     this.selectedProduct = product;
+  }
+
+  showTable(message: Product) {
+    this.selectedProduct = null;
+    alert(message.price);
   }
 
 

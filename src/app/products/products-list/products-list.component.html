@@ -1,3 +1,5 @@
+<section *ngIf="selectedProduct === null">
+
 <h3>Product's List <span class="badge badge-success"  *ngIf="products && products.length > 0" >{{products.length}}</span></h3>
 
 <article class="alert alert-info" *ngIf="products && products.length > 0">
@@ -7,8 +9,6 @@
 <article class="alert alert-danger" *ngIf="products && products.length === 0">
   There are not available products
 </article>
-
-
 
 <table class="table table-bordered table-striped table-hover" *ngIf="products && products.length > 0">
   <thead>
@@ -31,8 +31,10 @@
   </tbody>
 </table>
 
+</section>
+
 <div *ngIf="selectedProduct">
-  <app-product-details [product]="selectedProduct"></app-product-details>
+  <app-product-details [product]="selectedProduct"  (emitter)="showTable($event)"  ></app-product-details>
   Hai selezionato {{selectedProduct.name}}
 </div>
 
