@@ -1,0 +1,30 @@
+<h3>Product's List <span class="badge badge-success"  *ngIf="products && products.length > 0" >{{products.length}}</span></h3>
+
+<article class="alert alert-info" *ngIf="products && products.length > 0">
+  There are {{products.length}} articles
+</article>
+
+<article class="alert alert-danger" *ngIf="products && products.length === 0">
+  There are not available products
+</article>
+
+
+
+<table class="table table-bordered table-striped table-hover" *ngIf="products && products.length > 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td><img src="{{product.photo}}"></td>
+    </tr>
+  </tbody>
+</table>
+
+

@@ -8,6 +8,7 @@ import { MyFooterComponent } from './shared/my-footer/my-footer.component';
 import { MyMenuComponent } from './shared/my-menu/my-menu.component';
 import { MyMainComponent } from './shared/my-main/my-main.component';
 import { EsempioComponent } from './shared/esempio/esempio.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EsempioComponent } from './shared/esempio/esempio.component';
     MyMenuComponent,
     MyFooterComponent,
     MyMainComponent,
-    EsempioComponent
+    EsempioComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
