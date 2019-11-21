@@ -31,10 +31,7 @@ export class ContextService {
   }
 
   getCurrentUser(): User {
-
-    return {id: 54, name: 'Igor', surname: 'Stravinski', position: 'Comositore'};
-
-   // return this.currenUser;
+    return this.currenUser;
   }
 
   setCurrentUser(user: User) {

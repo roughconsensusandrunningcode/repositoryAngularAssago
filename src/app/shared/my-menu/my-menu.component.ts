@@ -24,11 +24,16 @@ export class MyMenuComponent {
     this.menu = service.getMenu();
     this.numeroProdotti = this.productService.getNumeroProdotti();
     this.currentUser = this.service.getCurrentUser();
+
+    setInterval( () => {
+      this.currentUser = this.service.getCurrentUser();
+    }, 1000);
   }
 
   logout() {
     this.currentUser = null;
     this.service.setCurrentUser(null);
+    this.router.navigate(['/login']);
   }
 
   login() {
