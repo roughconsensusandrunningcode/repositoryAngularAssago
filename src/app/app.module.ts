@@ -16,6 +16,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { LoginComponent } from './shared/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsListComponent } from './placeholder/posts-list/posts-list.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { LoginComponent } from './shared/login/login.component';
     NotFoundComponent,
     UserDetailsComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { LoginComponent } from './shared/login/login.component';
+import { PostsListComponent } from './placeholder/posts-list/posts-list.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
 {path: 'users', component: UsersListComponent},
 {path: 'users/:id', component: UserDetailsComponent},
 {path: 'welcome', component: WelcomeComponent},
+{path: 'posts', component: PostsListComponent},
 {path: 'login', component: LoginComponent},
 {path: '', redirectTo: 'welcome', pathMatch: 'full'},
 {path: '**', component: NotFoundComponent}

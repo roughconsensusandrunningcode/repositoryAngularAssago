@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApiUnicredit: '12.4.5.6'
+  urlApiUnicredit: 'http://localhost:3000/users'
 };
 
 /*

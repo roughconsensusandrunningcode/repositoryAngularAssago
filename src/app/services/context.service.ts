@@ -17,7 +17,7 @@ export class ContextService {
       {text: 'Home', link: '/'},
       {text: 'Products', link: '/products'},
       {text: 'Users', link: '/users'},
-      {text: 'About', link: '/about'},
+      {text: 'Posts', link: '/posts'},
       {text: 'Contacts', link: '/contacts'},
     ];
   }

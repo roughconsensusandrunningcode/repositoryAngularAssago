@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+  getUsersFromApi(): Observable<User[]> {
+    return this.http.get<User[]>(environment.urlApiUnicredit);
+  }
+
 
   getUsersAsObservable(): Observable<User[]> {
     return of(this.getUsers());

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlApiUniCredit: 'http://192.167.3.4'
+  urlApiUniCredit: 'http://localhost:3000/users'
 };

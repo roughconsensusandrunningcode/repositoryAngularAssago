@@ -13,7 +13,7 @@ export class UsersListComponent {
   observableUsers$: Observable<User[]>;
 
   constructor(private service: UsersService) {
-    this.observableUsers$ = this.service.getUsersAsObservable();
+    this.observableUsers$ = this.service.getUsersFromApi();
   }
 
 }
