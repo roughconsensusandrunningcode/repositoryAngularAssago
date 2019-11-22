@@ -10,14 +10,18 @@ import { MyMainComponent } from './shared/my-main/my-main.component';
 import { EsempioComponent } from './shared/esempio/esempio.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { LoginComponent } from './shared/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostsListComponent } from './placeholder/posts-list/posts-list.component';
+import { MyFirstGuard } from './shared/guards/my-first-guard';
+import { MySecondGuard } from './shared/guards/my-second-guard';
+import { MyFirstInterceptor } from './shared/interceptor/my-first-interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,9 +44,13 @@ import { PostsListComponent } from './placeholder/posts-list/posts-list.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers:  [MyFirstGuard, MySecondGuard,
+    {provide: HTTP_INTERCEPTORS, useClass: MyFirstInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

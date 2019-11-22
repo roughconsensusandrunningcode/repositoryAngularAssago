@@ -1,1 +1,48 @@
-<h3>My Header</h3>
+<div *ngIf="currentUser">
+  <h3>My Header</h3>
+</div>
+<!-- <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+<div class="form-group">
+  <label for="name">Name</label>
+  <input  formControlName="name" type="text">
+
+  <div class="alert alert-danger" *ngIf="name.invalid && name.dirty" >
+    Name is required
+  </div>
+
+
+</div>
+
+<div class="form-group">
+    <label for="surname">Surname</label>
+    <input formControlName="surname" type="text">
+    <div class="alert alert-danger" *ngIf="surname.invalid && surname.dirty" >
+        SurName is required
+    </div>
+
+</div>
+
+<div class="form-group">
+  <button  [disabled]="myForm.invalid" type="submit" class="btn btn-info">OK</button>
+</div>
+
+</form> -->
+
+
+
+<!-- <input type="text" [formControl]='myFirstControl'>
+
+
+
+
+
+<h3>Observable</h3>
+{{myFirstControlObservable | async}}
+
+
+<button (click)="cambiaValore()" class="btn btn-success">CHANGE</button>
+
+{{myFirstControl.value | uppercase}}
+
+{{valore}} -->

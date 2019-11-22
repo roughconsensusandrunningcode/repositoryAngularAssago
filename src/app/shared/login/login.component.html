@@ -1,14 +1,27 @@
 
-<form (ngSubmit)="login()">
+<form  #myForm="ngForm"  (ngSubmit)="login()">
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" [(ngModel)]='credentials.username'  id="username" name="username" class="form-control">
+    <input type="text" [(ngModel)]='credentials.username'  id="username" name="username" class="form-control" required minlength="5"  #userName="ngModel" >
+
+    <div class="alert alert-danger" *ngIf="userName.errors && userName.errors['required']"  [hidden]="userName.valid || userName.pristine"  >
+      Username is required
+    </div>
+
+    <div class="alert alert-danger" *ngIf="userName.errors && userName.errors['minlength']" [hidden]="userName.valid || userName.pristine"  >
+       Minlength is 5
+    </div>
   </div>
 
   <div class="form-group">
       <label for="password">Password</label>
-      <input  [(ngModel)]='credentials.password'  type="password" id="password" name="password" class="form-control">
+      <input #password="ngModel"  [(ngModel)]='credentials.password'  type="password" id="password" name="password" class="form-control" required>
+
+      <div class="alert alert-danger"  [hidden]="password.valid || password.pristine"  >
+          Password is required
+      </div>
   </div>
+
 
   <div *ngIf="check===false" class="alert alert-danger">
     Credenziali errate
@@ -16,7 +29,7 @@
 
 
   <div class="form-group">
-    <button type="submit" class="btn btn-info">OK</button>
+    <button [disabled]="myForm.invalid"  type="submit" class="btn btn-info">OK</button>
   </div>
 
 </form>

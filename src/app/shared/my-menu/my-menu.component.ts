@@ -18,16 +18,22 @@ export class MyMenuComponent {
   currentUser: User = null;
 
 
-  constructor(private router: Router, private service: ContextService, private productService: ProductsService) {
+  constructor(private router: Router,
+              private service: ContextService,
+              private productService: ProductsService) {
     this.service.setVisualizzazioni(58);
     this.visualizzazioni = this.service.getVisualizzazioni();
     this.menu = service.getMenu();
     this.numeroProdotti = this.productService.getNumeroProdotti();
     this.currentUser = this.service.getCurrentUser();
 
-    setInterval( () => {
-      this.currentUser = this.service.getCurrentUser();
-    }, 1000);
+    this.service.userLogged$.subscribe(u => {
+      this.currentUser = u;
+    });
+
+    // setInterval( () => {
+    //   this.currentUser = this.service.getCurrentUser();
+    // }, 1000);
   }
 
   logout() {

@@ -23,10 +23,6 @@ export class UsersService {
 
   getUsers(): User[] {
     return [
-      {id: 1, name: 'Mario', surname: 'Rossi', position: 'developer'},
-      {id: 2, name: 'Luigi', surname: 'Bianchi', position: 'developer'},
-      {id: 3, name: 'Antonio', surname: 'Verdi', position: 'senior developer'},
-      {id: 4, name: 'Giacomo', surname: 'Leopardi', position: 'poeta'},
     ];
   }
 

@@ -7,14 +7,16 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { LoginComponent } from './shared/login/login.component';
 import { PostsListComponent } from './placeholder/posts-list/posts-list.component';
+import { MyFirstGuard } from './shared/guards/my-first-guard';
+import { MySecondGuard } from './shared/guards/my-second-guard';
 
 
 const routes: Routes = [
-{path: 'products', component: ProductsListComponent},
-{path: 'users', component: UsersListComponent},
-{path: 'users/:id', component: UserDetailsComponent},
-{path: 'welcome', component: WelcomeComponent},
-{path: 'posts', component: PostsListComponent},
+{path: 'products', component: ProductsListComponent, canActivate: [MyFirstGuard, MySecondGuard]},
+{path: 'users', component: UsersListComponent, canActivate: [MyFirstGuard]},
+{path: 'users/:id', component: UserDetailsComponent, canActivate: [MyFirstGuard]},
+{path: 'welcome', component: WelcomeComponent, canActivate: [MyFirstGuard]},
+{path: 'posts', component: PostsListComponent, canActivate: [MyFirstGuard]},
 {path: 'login', component: LoginComponent},
 {path: '', redirectTo: 'welcome', pathMatch: 'full'},
 {path: '**', component: NotFoundComponent}

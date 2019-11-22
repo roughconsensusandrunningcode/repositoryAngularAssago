@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/products/product';
 import { ContextService } from 'src/app/services/context.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { User } from 'src/app/users/user';
 
 @Component({
   selector: 'app-my-footer',
@@ -12,6 +13,7 @@ export class MyFooterComponent implements OnInit {
 
 
   productFooter: Product;
+  currentUser: User;
   visualizzazioni: number;
   prodotti: number;
   constructor(private service: ContextService, private productsService: ProductsService) {
@@ -28,6 +30,10 @@ export class MyFooterComponent implements OnInit {
 
     this.visualizzazioni = this.service.getVisualizzazioni();
     this.prodotti = this.productsService.getNumeroProdotti();
+
+    this.service.userLogged$.subscribe(u => {
+      this.currentUser = u;
+    });
   }
 
   ngOnInit() {
