@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,10 @@ import { User } from './user';
 export class UsersService {
 
   constructor() { }
+
+  getUsersAsObservable(): Observable<User[]> {
+    return of(this.getUsers());
+  }
 
   getUsers(): User[] {
     return [

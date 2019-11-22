@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsersService } from '../users.service';
 import { User } from '../user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users-list',
@@ -9,9 +10,10 @@ import { User } from '../user';
 })
 export class UsersListComponent {
 
-  users: User[] = [];
+  observableUsers$: Observable<User[]>;
+
   constructor(private service: UsersService) {
-    this.users = this.service.getUsers();
+    this.observableUsers$ = this.service.getUsersAsObservable();
   }
 
 }
